@@ -1,1 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Birthday Party Bookings</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
 
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d4200594-83ff-41e5-9502-0df0597a59e6" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/solid_yellow.png" style="object-position:center 40%"><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🎂</span></div><h1 class="page-title">Birthday Party Bookings</h1><p class="page-description"></p></header><div class="page-body"><p id="8580cce6-a7e5-402f-8de4-8cf1f2f0512b" class="">Birthday Parties are typically booked for Saturdays and Sundays, though can be occasionally booked mid-week with manager approval. Always try for Fridays if they’re wanting mid-week.</p><h3 id="dc14d87c-04df-4f32-8da2-7b33022974f5" class="">Required links</h3><p id="172af7e5-7749-44b1-a572-9c8053b2c161" class=""><em><a href="https://docs.google.com/spreadsheets/d/1ylHmCr-uTF5tMl2ZA36RvAKtT-pm07FHR9zZsuifTyg/edit#gid=0">Birthday Party Bookings Doc</a></em><em>  </em></p><p id="8be2de78-9eec-4e3e-b05b-8ded5ddb4e64" class=""><em><a href="https://docs.google.com/forms/d/e/1FAIpQLScF01x0WOV4jFXl8GBWFexF4WupvRdAXyWoPc0fzFe2U6XJ9g/viewform">Birthday Party Booking Form</a></em><em><br><br></em><em><a href="https://app.fixionline.com/pages/calendar/gridview.aspx">Fixi Calendar (Recommend Grid View)</a></em></p><figure id="bd4ddbd6-0861-43e4-ad67-ec9c7dd291c6" class="link-to-page"><a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Inclusions%20Script%20bd4ddbd6086143e4ad67ec9c7dd291c6.html">Inclusions Script:</a></figure><figure id="d0ac7f2d-3ef7-4452-97cf-2b7b3fe21124" class="link-to-page"><a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Detailed%20Script%20d0ac7f2d3ef7445297cf2b7b3fe21124.html">Detailed Script</a></figure><figure id="67319593-fdea-4411-aa07-c26904ff2507" class="link-to-page"><a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Dos%20and%20Don%E2%80%99ts%20to%20Note%2067319593fdea4411aa07c26904ff2507.html">Dos and Don’ts to Note</a></figure><figure id="717b13ec-2ad7-4420-9734-c790644d8d1d" class="link-to-page"><a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/FAQ%20-%20Birthday%20Parties%20717b13ec2ad744209734c790644d8d1d.html">FAQ - Birthday Parties</a></figure><figure id="eeefea13-d6f2-4320-9701-77d3c1f8876e" class="link-to-page"><a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Voicemail%20Script%20eeefea13d6f24320970177d3c1f8876e.html">Voicemail Script</a></figure><table id="8d0c37f7-ad04-4a42-8bcf-77fcc81039d5" class="simple-table"><tbody><tr id="5c1cd72d-4dd6-44c3-896b-29a92df4223e"><td id="y\dT" class="">Day</td><td id="vFp@" class="">Term</td><td id="MX=>" class="">Time Slot</td><td id="tz[f" class="">Available Bookings</td></tr><tr id="f9555ddc-33ae-453e-aaa1-4a9dcdb1a194"><td id="y\dT" class="">Saturday</td><td id="vFp@" class="">1</td><td id="MX=>" class="">2pm - 4pm</td><td id="tz[f" class="">2</td></tr><tr id="eab04b8d-74dc-4a5b-89ff-7f8f54ca29a0"><td id="y\dT" class="">Saturday</td><td id="vFp@" class="">2 &amp; 3</td><td id="MX=>" class="">12pm - 2pm</td><td id="tz[f" class="">4</td></tr><tr id="82634a54-0e63-4ce5-b03d-cfdec9f6e868"><td id="y\dT" class="">Saturday</td><td id="vFp@" class="">2 &amp; 3</td><td id="MX=>" class="">2pm - 4pm</td><td id="tz[f" class="">4</td></tr><tr id="3a4a9a47-abfa-45e3-9f5f-19f0bdcadfe6"><td id="y\dT" class="">Saturday</td><td id="vFp@" class="">4</td><td id="MX=>" class="">Not Available</td><td id="tz[f" class="">0</td></tr><tr id="9e47c996-7b2d-46b6-9d35-07bd2a2b5333"><td id="y\dT" class="">Sunday</td><td id="vFp@" class="">All Year</td><td id="MX=>" class="">9am - 11am</td><td id="tz[f" class="">4</td></tr><tr id="f6eb4233-1386-481e-9f02-d9951771476e"><td id="y\dT" class="">Sunday</td><td id="vFp@" class="">All Year</td><td id="MX=>" class="">10:30am - 12:30pm</td><td id="tz[f" class="">4</td></tr><tr id="a6f647f6-397b-46b2-b1c2-22a44ae2a67d"><td id="y\dT" class="">Sunday</td><td id="vFp@" class="">All Year</td><td id="MX=>" class="">12pm - 2pm</td><td id="tz[f" class="">4</td></tr><tr id="6b0c6537-658a-4d12-92d4-cfd5f774903e"><td id="y\dT" class="">Friday</td><td id="vFp@" class="">All Year</td><td id="MX=>" class="">3:30pm - 5:30pm OR 4pm - 6pm</td><td id="tz[f" class="">1</td></tr></tbody></table><ol type="1" id="f38772ac-8421-4f5c-8098-fc2bd3518b7d" class="numbered-list" start="1"><li>Open the <em><a href="https://docs.google.com/spreadsheets/d/1ylHmCr-uTF5tMl2ZA36RvAKtT-pm07FHR9zZsuifTyg/edit#gid=0">Birthday Party Bookings Doc</a></em><em>.</em> Contact all bookings from top to bottom and leave a message where there is no answer. - <a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Voicemail%20Script%20eeefea13d6f24320970177d3c1f8876e.html">See voicemail script.</a> <em>Include a comment Initials x Date x LM (Left message)</em></li></ol><ol type="1" id="8b33c76f-9618-4953-abaa-fa15c67b9de9" class="numbered-list" start="2"><li>Check availability: Open the <a href="https://app.fixionline.com/pages/calendar/gridview.aspx">Fixi Calendar</a> to view available birthday package times.</li></ol><figure id="a02ca9a9-7e12-47ce-bff9-6e12ad408492" class="image"><a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Capture.png"><img style="width:708px" src="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Capture.png"></a></figure><ol type="1" id="2fe629eb-fc33-4779-9a1a-2ba1c946c4f1" class="numbered-list" start="1"><li>Collect customer information: Gather the customer's name, Birthday Child’s name &amp; age, contact details, and preferred date and time for the birthday from the <em><a href="https://docs.google.com/spreadsheets/d/1ylHmCr-uTF5tMl2ZA36RvAKtT-pm07FHR9zZsuifTyg/edit#gid=0">Birthday Party Bookings Doc</a></em><em>.</em></li></ol><ol type="1" id="30431440-577c-48ce-916f-2e81f0a4f27a" class="numbered-list" start="2"><li>Call customer to confirm: Confirm date and time period suits. Ensure if they want to do Nerf wars, that an appropriate Nerf wars slot is available. Give customer a brief explanation of how a birthday runs - <a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Inclusions%20Script%20bd4ddbd6086143e4ad67ec9c7dd291c6.html">example Script</a>. Answer any questions they may have - <a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/FAQ%20-%20Birthday%20Parties%20717b13ec2ad744209734c790644d8d1d.html">see FAQ. </a></li></ol><ol type="1" id="21b628d3-475f-4e46-b370-42fe15e0e0fc" class="numbered-list" start="3"><li>Provide additional information: Inform the customer about any relevant policies, such as <a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Dos%20and%20Don%E2%80%99ts%20to%20Note%2067319593fdea4411aa07c26904ff2507.html">cancellation procedures or court rules.</a></li></ol><ol type="1" id="19ba8283-d04b-4e90-8879-0e47b185c4c8" class="numbered-list" start="4"><li>Open <em><a href="https://docs.google.com/forms/d/e/1FAIpQLScF01x0WOV4jFXl8GBWFexF4WupvRdAXyWoPc0fzFe2U6XJ9g/viewform">Birthday Party Booking Form</a></em><em> </em>and go through entire form with customer and ensure all details are entered correctly. Submit.</li></ol><ol type="1" id="47998362-9c19-4d10-854b-b43aaafc047c" class="numbered-list" start="5"><li>Create/edit the booking: Click on the placeholder booking and select “Edit only this occurence” and delete the booking slot. </li></ol><figure id="f2f2e6bf-b1b9-49a0-9b2a-83c814310831" class="image"><a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Capture%201.png"><img style="width:490px" src="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Capture%201.png"></a></figure><ul id="539d3555-9371-41ea-a86c-bc1dc9d43e93" class="toggle"><li><details open=""><summary>Add the new booking to the Fixi Calendar, ensuring all details are correct, always include customer email address.</summary><ul id="694722fa-6e1e-4f73-a471-0c7eb9010225" class="bulleted-list"><li style="list-style-type:disc">Open the Fixi Calendar and navigate to the correct date</li></ul><ul id="2d70cf97-c726-4f39-aded-395536d23ed0" class="bulleted-list"><li style="list-style-type:disc">Click <strong>Actions</strong> button -  “+New Booking”</li></ul><figure id="69c6178a-8a9d-4cfe-8d80-666aa8b208eb" class="image"><a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Capture%202.png"><img style="width:263px" src="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Capture%202.png"></a></figure><ul id="2ca7b0fa-45a8-476c-8b91-c4079e495ce7" class="bulleted-list"><li style="list-style-type:disc">Input Customer/parent details - Fill in all mandatory fields * &amp; Always Include Email.</li></ul><figure id="c7b6f75b-731a-464e-ae20-6e0c3e5414a6" class="image"><a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Capture%203.png"><img style="width:568px" src="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Capture%203.png"></a></figure><ul id="f2c954ed-d55f-4fba-88a0-3d83fcfe5531" class="bulleted-list"><li style="list-style-type:disc">Select the appropriate court in the "Court" dropdown</li></ul><ul id="ef9f5643-73e7-4df0-b986-f9489cf40800" class="bulleted-list"><li style="list-style-type:disc">Select the appropriate event type - Traditional Nerf &amp; Sports Party or Sports Party</li></ul><ul id="89b04188-bd00-4126-a014-0f0313aea10d" class="bulleted-list"><li style="list-style-type:disc">Set the correct duration for the booking</li></ul><ul id="5ae7b7da-7041-4db0-a2fd-d3cbe5c2c4a5" class="bulleted-list"><li style="list-style-type:disc">Set the amount of attendees to informed amount</li></ul><ul id="5dfd7b69-ae2e-4526-b985-2e1ff02903e9" class="bulleted-list"><li style="list-style-type:disc">Set the remaining fee to total booking fee - deposit paid</li></ul><ul id="e9d3051d-ca98-412d-bbf1-b5d9d4201391" class="bulleted-list"><li style="list-style-type:disc">Double-check all entered information for accuracy</li></ul><figure id="7a4e1b67-d478-42b4-b8f2-5d29a001f898" class="image"><a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Capture%204.png"><img style="width:680px" src="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Capture%204.png"></a></figure><ul id="bed2cc09-ae28-4264-8871-43e2307bbc1f" class="bulleted-list"><li style="list-style-type:disc">Insert comments from slack: Copy and paste recent comments from <em>Referee- </em>in the Party-Bookings channel and paste into fixi comments. </li></ul><ul id="3807f7bf-9af4-4547-b38c-8a01e983997e" class="toggle"><li><details open=""><summary>Click "Save Booking" to confirm the booking. <em>If Error Occurs - Click dropdown</em></summary><p id="c0886c9c-aef1-4a9b-895c-a66a7c106e42" class=""><em>If Following Error occurs</em>: this means the customer already exists in fixi, try using the Existing customer function instead to find your customer. Phone # is easiest to search with. If still not found, press OK and insert a new customer profile. </p><figure id="247c4914-f14b-419f-92cd-f00937a02177" class="image"><a href="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Capture%205.png"><img style="width:554px" src="Birthday%20Party%20Bookings%20d420059483ff41e595020df0597a59e6/Capture%205.png"></a></figure></details></li></ul></details></li></ul><ol type="1" id="4f0e4b6d-03e8-4573-8451-41a35fb40bfb" class="numbered-list" start="1"><li>Remove the booking enquiry line: Delete the whole enquiry line in the <em><a href="https://docs.google.com/spreadsheets/d/1ylHmCr-uTF5tMl2ZA36RvAKtT-pm07FHR9zZsuifTyg/edit#gid=0">Birthday Party Bookings Doc</a></em><em>.</em></li></ol><p id="a8a16628-6939-44cd-b3e9-24e6b0028bf9" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
